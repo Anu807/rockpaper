@@ -48,5 +48,4 @@ function getComputerChoice() {
     console.log ("The computer has won! Better luck next time! Fighting!");
    }   
  }
-
- playGame();
+playGame();
