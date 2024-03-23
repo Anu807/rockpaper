@@ -14,12 +14,12 @@ function getComputerChoice() {
  } 
 
  function playRound (playerSelection,computerSelection) {
-    if(playerSelection =='rock' && computerSelection == 'scissor'|| 
-    playerSelection == 'paper' && computerSelection == 'rock'||
-    playerSelection =='scissor' && computerSelection =='paper'){
+    if(playerSelection ==='rock' && computerSelection === 'scissor'|| 
+    playerSelection === 'paper' && computerSelection === 'rock'||
+    playerSelection ==='scissor' && computerSelection ==='paper'){
     userWinCount++;
     return "You win! Congratulations";
-    } else if (playerSelection == computerSelection) {
+    } else if (playerSelection === computerSelection) {
         return "It's a tie! Better luck next time!";
     } else {
         computerWinCount++;
@@ -29,20 +29,19 @@ function getComputerChoice() {
  
  function playGame(){
     let i;
-    for (i=0;i<5;i++){
+    for (i=1;i<=5;i++){
     let playerSelection = prompt("Enter your choice:");
-    playerSelection = playerSelection.toLowerCase;
+    playerSelection = playerSelection.toLowerCase();
     let computerSelection = getComputerChoice();
     let result =playRound(playerSelection,computerSelection);
-    console.log(result);
+    console.log(`Round ${i}: ${result} Your score: ${userWinCount}, Computer score : ${computerWinCount}`);
     
     }  
     
-   if (userWinCount>=3){
-    console.log("You won the game!Hurray!!");
-   } else if (userWinCount==computerWinCount){
+    
+   if (userWinCount===computerWinCount){
     console.log("You tied with the computer! Sorry! Better luck next time!");
-   } else if (userWinCount> computerWinCount){
+   } else if (userWinCount > computerWinCount){
     console.log("You won the game! Now enjoy your victory!");
    } else {
     console.log ("The computer has won! Better luck next time! Fighting!");
